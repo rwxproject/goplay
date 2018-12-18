@@ -2,7 +2,36 @@ package main
 
 import "fmt"
 
+type person struct {
+	first string
+	last  string
+	age   int
+}
+
+type superPerson struct {
+	person
+	license bool
+}
+
 func main() {
+
+	p1 := person{
+		first: "abc",
+		last:  "def",
+		age:   23,
+	}
+
+	p2 := superPerson{
+		person: person{
+			first: "qwe",
+			last:  "yuo",
+			age:   56,
+		},
+		license: true,
+	}
+
+	fmt.Println(p1)
+	fmt.Println(p2)
 
 	x := []int{1, 2, 3, 4, 5}
 	fmt.Println(x)
